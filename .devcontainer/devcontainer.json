@@ -1,0 +1,19 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+      "ghcr.io/devcontainers/features/dotnet:2": {
+        "version": "8.0"
+      }
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "leo-labs.dotnet",
+          "vscode-icons-team.vscode-icons",
+          "ms-dotnettools.csharp",
+          "patcx.vscode-nuget-gallery",
+          "fullstackspider.visual-nuget"
+        ]
+      }
+    }
+  }
