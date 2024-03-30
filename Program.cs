@@ -1,6 +1,18 @@
+
 ﻿internal class Program
 {
-    private static void Main(string[] args)
+    private int calc_rank(int x)
+    {
+        int rank = 0;
+        int temp = x;
+        while (temp > 0)
+        {
+            rank++;
+            temp = temp / 10;
+        }
+        return rank;
+    }
+    static void Main(string[] args)
     {
         // 123 + 321 = 444
         // 9999 + 9999 = 19998
@@ -14,8 +26,8 @@
         string num2str = Console.ReadLine();
         int num2 = int.Parse(num2str);
 
-        int rank1 = rank(num1);
-        int rank2 = rank(num2);
+        int rank1 = calc_rank(num1);
+        int rank2 = calc_rank(num2);
         int rank = (rank1 > rank2) ? rank1 : rank2; // Max
         rank += 1;
         int[] num1Array = new int[rank];
