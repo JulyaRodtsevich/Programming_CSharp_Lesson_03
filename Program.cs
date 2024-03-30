@@ -16,44 +16,25 @@
 
         int rank1 = rank(num1);
         int rank2 = rank(num2);
-        
-        int[] num1Array = new int[rank1];
-        for (int i = 0; i < rank1; i++)
+        int rank = (rank1 > rank2) ? rank1 : rank2; // Max
+        rank += 1;
+        int[] num1Array = new int[rank];
+        int[] num2Array = new int[rank];
+        for (int i = 0; i < rank; i++)
         {
             num1Array[i] = num1 % 10;
             num1 = num1 / 10;
-        }
-
-        int rank2 = 0;
-        int temp2 = num2;
-        while (temp2 > 0)
-        {
-            rank2++;
-            temp2 = temp2 / 10;
-        }
-
-        int[] num2Array = new int[rank2];
-        for (int i = 0; i < rank2; i++)
-        {
             num2Array[i] = num2 % 10;
-            num2 = num2 / 10;
+            num2 = num2 / 10; 
         }
-
-
-        int maxRank = num1Array.Length > num2Array.Length ? num1Array.Length : num2Array.Length;
-        int[] resultArray = new int[maxRank];
-
+        
+        int[] resultArray = new int[rank];
         int carry = 0;
-        for (int i = 0; i < maxRank; i++)
+        for (int i = 0; i < rank; i++)
         {
             int sum = num1Array[i] + num2Array[i] + carry;
             resultArray[i] = sum % 10;
             carry = sum / 10;
-        }
-
-        if (carry > 0)
-        {
-            resultArray[maxRank] = carry;
         }
 
         string result = "";
