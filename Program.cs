@@ -1,7 +1,7 @@
 
 ﻿internal class Program
 {
-    private int calc_rank(int x)
+    private static int calc_rank(int x)
     {
         int rank = 0;
         int temp = x;
@@ -12,7 +12,7 @@
         }
         return rank;
     }
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         // 123 + 321 = 444
         // 9999 + 9999 = 19998
