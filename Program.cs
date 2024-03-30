@@ -14,14 +14,9 @@
         string num2str = Console.ReadLine();
         int num2 = int.Parse(num2str);
 
-        int rank1 = 0;
-        int temp1 = num1;
-        while (temp1 > 0)
-        {
-            rank1++;
-            temp1 = temp1 / 10;
-        }
-
+        int rank1 = rank(num1);
+        int rank2 = rank(num2);
+        
         int[] num1Array = new int[rank1];
         for (int i = 0; i < rank1; i++)
         {
@@ -68,5 +63,17 @@
         }
 
         Console.WriteLine("The result is: " + result);
+    }
+
+    private int rank(int x)
+    {
+        int rank = 0;
+        int temp = x;
+        while (temp > 0)
+        {
+            rank++;
+            temp = temp / 10;
+        }
+        return rank;
     }
 }
